@@ -1,5 +1,10 @@
 import React from "react";
 import {Home,Heart,MessageSquare,Calendar,User,Bell,Search,LogOut,Building2,ChevronDown,BedDouble,Bath,Ruler,Trash2,} from "lucide-react";
+import image1 from "../assets/image1.png";
+import image2 from "../assets/image2.png";
+import image3 from "../assets/image3.png";
+
+
 
 const NAV_ITEMS = [
   { label: "Dashboard", icon: Home },
@@ -28,7 +33,7 @@ function Sidebar() {
               key={label}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${
                 active
-                  ? "bg-blue-600 text-white shadow-sm shadow-blue-200"
+                  ? "bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-200"
                   : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"
               }`}
             >
@@ -90,8 +95,7 @@ const PROPERTIES = [
     beds: 5,
     baths: 6,
     sqft: "4500 sqft",
-    image:
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&h=420&fit=crop",
+    image: image1,
   },
   {
     id: 2,
@@ -101,8 +105,7 @@ const PROPERTIES = [
     beds: 3,
     baths: 3,
     sqft: "2200 sqft",
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=420&fit=crop",
+    image: image2,
   },
   {
     id: 3,
@@ -112,8 +115,7 @@ const PROPERTIES = [
     beds: 4,
     baths: 4,
     sqft: "3200 sqft",
-    image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=420&fit=crop",
+    image: image3,
   },
 ];
 

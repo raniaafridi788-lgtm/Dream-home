@@ -41,7 +41,7 @@ function Sidebar(){
               key={label}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${
                 active
-                  ? "bg-blue-600 text-white shadow-sm shadow-blue-200"
+                  ? "bg-blue-600 hover:bg-blue-700 text-white shadow-sm shadow-blue-200"
                   : "text-slate-500 hover:bg-slate-100 hover:text-slate-800"
               }`}
             >
@@ -124,8 +124,8 @@ function Field({ label, value, onChange, type = "text", textarea = false }) {
 function ProfileEdit(){
 
   const [form, setForm] = useState({
-    fullName: "Rania",
-    email: "rania@example.com",
+    fullName: "Sara Khan",
+    email: "sarakhan@gmail.com",
     phone: "+92 300 1234567",
     location: "Lahore, Pakistan",
     bio: "Real estate enthusiast and property seeker.",
