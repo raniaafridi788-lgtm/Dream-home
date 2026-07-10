@@ -5,7 +5,7 @@ import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
 
-
+// sidebar Navigation Items
 const NAV_ITEMS = [
   { label: "Dashboard", icon: Home },
   { label: "Saved Properties", icon: Heart },
@@ -15,8 +15,7 @@ const NAV_ITEMS = [
   { label: "Notifications", icon: Bell },
 ];
 
-
-
+//Display the left navigation menu
 function Sidebar() {
   return (
     <aside className="hidden md:flex w-60 shrink-0 flex-col justify-between bg-white border-r border-slate-200 py-6">
@@ -54,6 +53,8 @@ function Sidebar() {
     </aside>
   );
 }
+
+// Displays search bar, notification icon and user profile
 function Header({ notifCount = 8, searchPlaceholder = "Search bookings..." }) {
   return (
     <header className="flex items-center gap-4 px-6 md:px-8 py-4 border-b border-slate-200 bg-white">
@@ -83,13 +84,14 @@ function Header({ notifCount = 8, searchPlaceholder = "Search bookings..." }) {
     </header>
   );
 }
-
+// Defines background and text colors
 const STATUS_STYLES = {
   Confirmed: "bg-emerald-50 text-emerald-600",
   Pending: "bg-amber-50 text-amber-600",
   Cancelled: "bg-rose-50 text-rose-500",
 };
 
+// Confirmed Booking
 const BOOKINGS = [
   {
     id: 1,
@@ -123,6 +125,8 @@ const BOOKINGS = [
   },
 ];
 
+// Booking Card Component
+// Displays a single booking card 
 function BookingCard({ booking }) {
   return (
     <div className="bg-white rounded-2xl border border-slate-200 p-3 flex gap-4">
@@ -162,10 +166,8 @@ function BookingCard({ booking }) {
   )
 }
 
-
-
-
-
+// Main Booking List Component
+// Displays all property bookings
 function BookingList(){
     return(
 

@@ -5,7 +5,7 @@ import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
 
 
-
+// sidebar Navigation Items
 const NAV_ITEMS = [
   { label: "Dashboard", icon: Home },
   { label: "Saved Properties", icon: Heart, active: true },
@@ -14,7 +14,7 @@ const NAV_ITEMS = [
   { label: "Profile", icon: User },
   { label: "Notifications", icon: Bell },
 ];
-
+//display the left navigation menu
 function Sidebar() {
   return (
     <aside className="hidden md:flex w-60 shrink-0 flex-col justify-between bg-white border-r border-slate-200 py-6">
@@ -53,6 +53,7 @@ function Sidebar() {
   );
 }
 
+// Displays search bar, notification icon and user profile
 function Header({ notifCount = 8, searchPlaceholder = "Search properties..." }) {
   return (
     <header className="flex items-center gap-4 px-6 md:px-8 py-4 border-b border-slate-200 bg-white">
@@ -86,6 +87,7 @@ function Header({ notifCount = 8, searchPlaceholder = "Search properties..." }) 
   );
 }
 
+// Dashboard Statistics Data
 const PROPERTIES = [
   {
     id: 1,
@@ -118,7 +120,8 @@ const PROPERTIES = [
     image: image3,
   },
 ];
-
+//  Property Cart Components
+// Displays a single saved property card
 function PropertyCard({ property }) {
   return (
     <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
@@ -155,7 +158,7 @@ function PropertyCard({ property }) {
     </div>
   );
 }
-
+// Main Saved Properties Component
  function SavedProperties() {
   return (
     <div className="min-h-screen w-full bg-slate-50 flex text-slate-900" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui" }}>

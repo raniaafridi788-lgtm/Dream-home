@@ -1,6 +1,7 @@
 import React from "react";
 import {Home,Heart,MessageSquare,Calendar,User,Bell,Search,LogOut,Building2,ChevronDown,} from "lucide-react";
 
+// sidebar Navigation Items
 const NAV_ITEMS = [
   { label: "Dashboard", icon: Home },
   { label: "Saved Properties", icon: Heart },
@@ -10,6 +11,7 @@ const NAV_ITEMS = [
   { label: "Notifications", icon: Bell },
 ];
 
+//Display the left navigation menu
 function Sidebar() {
   return (
     <aside className="hidden md:flex w-60 shrink-0 flex-col justify-between bg-white border-r border-slate-200 py-6">
@@ -48,6 +50,7 @@ function Sidebar() {
   );
 }
 
+// Displays search bar, notification icon and user profile
 function Header({ notifCount = 8, searchPlaceholder = "Search inquiries..." }) {
   return (
     <header className="flex items-center gap-4 px-6 md:px-8 py-4 border-b border-slate-200 bg-white">
@@ -78,12 +81,13 @@ function Header({ notifCount = 8, searchPlaceholder = "Search inquiries..." }) {
   );
 }
 
+// Defines background and text colors
 const STATUS_STYLES = {
   Pending: "bg-amber-50 text-amber-600",
   Replied: "bg-emerald-50 text-emerald-600",
   Closed: "bg-slate-100 text-slate-500",
 };
-
+// Stores all customer inquiry details
 const INQUIRIES = [
   {
     id: 1,
@@ -127,6 +131,7 @@ const INQUIRIES = [
   },
 ];
 
+// Displays a single customer inquiry
 function InquiryRow({ inquiry }) {
   return (
     <div className="flex items-start gap-4 py-4 px-1 border-b border-slate-100 last:border-b-0">
@@ -156,7 +161,8 @@ function InquiryRow({ inquiry }) {
   );
 }
 
-export default function InquiriesList() {
+// Main Inquiries List Component
+ function InquiriesList() {
   return (
     <div className="min-h-screen w-full bg-slate-50 flex text-slate-900" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui" }}>
       <Sidebar />
@@ -185,3 +191,4 @@ export default function InquiriesList() {
     </div>
   );
 }
+export default InquiriesList

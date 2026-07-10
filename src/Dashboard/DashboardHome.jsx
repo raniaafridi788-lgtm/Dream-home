@@ -2,6 +2,7 @@ import React from "react";
 import { Home,Heart,MessageSquare,Calendar,User,Bell, Search,LogOut,Building2,ChevronDown,TrendingUp,CheckCircle2, Mail, Clock,
 } from "lucide-react";
 
+// sidebar Navigation Items
 const NAV_ITEMS = [
   { label: "Dashboard", icon: Home, active: true },
   { label: "Saved Properties", icon: Heart },
@@ -11,6 +12,8 @@ const NAV_ITEMS = [
   { label: "Notifications", icon: Bell },
 ];
 
+
+//Display the left navigation menu
 function Sidebar() {
   return (
     <aside className="hidden md:flex w-60 shrink-0 flex-col justify-between bg-white border-r border-slate-200 py-6">
@@ -49,6 +52,7 @@ function Sidebar() {
   );
 }
 
+// Displays search bar, notification icon and user profile
 function Header({ notifCount = 8 }) {
   return (
     <header className="flex items-center gap-4 px-6 md:px-8 py-4 border-b border-slate-200 bg-white">
@@ -83,6 +87,7 @@ function Header({ notifCount = 8 }) {
   );
 }
 
+// Dashboard Statistics Data
 const STATS = [
   { label: "Saved Properties", value: 12, icon: Heart, tint: "bg-blue-50 text-blue-600" },
   { label: "Inquiries", value: 5, icon: MessageSquare, tint: "bg-emerald-50 text-emerald-600" },
@@ -90,6 +95,7 @@ const STATS = [
   { label: "Notifications", value: 8, icon: Bell, tint: "bg-rose-50 text-rose-600" },
 ];
 
+// Recent Activity Data
 const ACTIVITY = [
   {
     icon: CheckCircle2,
@@ -122,14 +128,20 @@ const ACTIVITY = [
 ];
 
 
+// Draws a line graph using SVG
 function OverviewChart() {
+  // chart data
   const points = [12, 18, 14, 26, 20, 32, 24];
+   // Find Maximum and Minimum Values
   const max = Math.max(...points);
-  const min = Math.min(...points);
+  const min = Math.min(...points); 
+  // SVG Width and Height
   const w = 560;
   const h = 140;
+
   const pad = 8;
   const step = (w - pad * 2) / (points.length - 1);
+    // Create Coordinates
   const coords = points.map((p, i) => {
     const x = pad + i * step;
     const y = h - pad - ((p - min) / (max - min || 1)) * (h - pad * 2);
@@ -167,9 +179,10 @@ function OverviewChart() {
     </svg>
   );
 }
-
+// Main Dashboard Components
  function DashboardHome() {
   return (
+    //Main Container
     <div className="min-h-screen w-full bg-slate-50 flex text-slate-900" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui" }}>
       <Sidebar />
       <div className="flex-1 flex flex-col min-w-0">
